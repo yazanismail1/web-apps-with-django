@@ -1,23 +1,23 @@
 1. **Inside the <app_name>/urls.py**
-  ```
-  from django.urls import path
-  from .views import <view_class_name>
-  
-  urlpattenrs = [
-    path('<path_name>', <view_class_name>.as_view(), name='<any-name>')
-  ]
-  ```
+    ```
+    from django.urls import path
+    from .views import <view_class_name>
+
+    urlpattenrs = [
+      path('<path_name>', <view_class_name>.as_view(), name='<any-name>')
+    ]
+    ```
  2. **Inside the <app_name>/views.py**
-  ```
-  from django.shortcuts import render
-  from django.views.generic import CreateView
-  from .models import <model_name>
-  
-  class <view_class_name>(CreateView):
-    template_name = '<HTML_name>.html'
-    model = <model_name>
-    fields = ['<field_name_from_the_model>', '<field_name_from_the_model>',...]
-  ```
+    ```
+    from django.shortcuts import render
+    from django.views.generic import CreateView
+    from .models import <model_name>
+
+    class <view_class_name>(CreateView):
+      template_name = '<HTML_name>.html'
+      model = <model_name>
+      fields = ['<field_name_from_the_model>', '<field_name_from_the_model>',...]
+    ```
 3. **Inside the <app_name>/models.py**
     ```
     from django.db import models
