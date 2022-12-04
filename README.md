@@ -191,46 +191,14 @@
 **General Commands**
 
 1. **To run the server**
-```
-python manage.py runserver
-```
-
+    ```
+    python manage.py runserver
+    ```
 2. **To kill the port**
-```
-kill -9 $(lsoft -t -l:"8000"
-```
-
+    ```
+    kill -9 $(lsoft -t -l:"8000"
+    ```
 3. **To run the tests**
-```
-python manage.py test
-``` 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    ```
+    python manage.py test
+    ``` 
