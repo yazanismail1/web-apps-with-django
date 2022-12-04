@@ -58,3 +58,179 @@
     ```
     '<app_name>'
     ```
+13. **Create the Apps views (<app_name>/views.py)**
+    ```
+    from django.views.generic import TemplateView
+
+    class <views_class_name>(TemplateView):
+        template_name = '<HTML_name>.html'
+    ```
+    OR
+    ```
+    from django.views.generic import ListView
+    from .models import <model_class_name>
+
+    class <views_class_name>(ListView):
+        template_name = '<HTML_file>.html'
+        model = <model_class_name>
+        context_object_name = '<name>' # to change from object_list to <name> in the templates.
+
+    class Meta:
+        verbose_name_plural = "<table_name>"
+        ordering = ['-pk'] # to change the ordering displayed
+    ```
+    OR
+    ```
+    from django.views.generic import DetailView
+    from .views import <model_class_name>
+
+    class <views_class_name>(DetailView):
+        template_name = '<HTML_file>.html'
+        model = <model_class_name>
+        context_object_name = '<name>' # to change from object_list to <name> in the templates.
+
+    class Meta:
+        verbose_name_plural = "<table_name>"
+        ordering = ['-pk'] # to change the ordering displayed
+    ```
+14. **Create the urls for the Apps**
+    
+    Create new directory inside the app called (urls.py):
+    ```  
+    from django.urls import path
+    from django.conf import settings
+    from django.conf.urls.static import static
+    from .views import <views_class_name>
+    
+    urlpatterns = [
+        path('<path>', <views_class_name>.as_view(), name='<name>')
+        ]
+    if settings.DEBUG:
+        urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    ```
+15. **Create the models aka the DB tables**
+    ```
+    from django.contrib.auth import get_user_model
+
+    class <model_class_name>(models.Model):
+        name = models.CharField(max_length=int, help_text=str, default=str)
+        rank = models.IntegerField()
+        author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+        time = models.DateTimeField()
+        description = models.TextField()
+        img = models.ImageField(upload_to='upload/')
+    
+        def __str__(self):
+            return self.name
+    ```
+16. **Register the models in the admin (<app_name>/admin.py)**
+    ```
+    from .models import <model_class_name>
+    
+    admin.site.register(<model_class_name>)
+    ```
+17. **Update the DB**
+    ```
+    python manage.py makemigrations
+    python manage.py migrate
+    ```
+18. **Create the tests for the apps (<app_name>/tests.py)**
+    ```
+    from django.test import SimpleTestCase or TestCase
+    from django.urls import reverse
+    
+    class <test_class_name>(SimpleTestCase or TestCase):
+        def <test_method_name>_status(self):
+            url = reverse('<name> from step 14')
+            response = self.client.get(url)
+            self.assertEqual(response.status_code, 200)
+    
+        def <test_method_name>_template(self):
+            url = reverse('<name> from step 14')
+            response = self.client.get(url)
+            self.assertTemplateUsed(response, '<HTML_name>.html')
+    ```
+19. **Create the HTML | Example**
+    ```
+    {% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/reset.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+        <title>Django Snacks</title>
+    
+    </head>
+    <body class="home-body">
+        {% include 'header.html' %}
+        <div class="home-header">
+            <div class="background"></div>
+            <h1>TRACK YOUR SNACKS!</h1>
+        </div>
+        <div class="body-cards">
+            {% for snack in object_list %}
+                <div class="snack-card">
+                    <img src='{{snack.img.url}}' width="250" height="250"/>
+                    <div class="card-details">
+                        <h3>{{ snack.name }}</h3>
+                        <hr>
+                        <p>{{snack.summary}}</p>
+                        <p class="time">{{snack.time}}</p>
+                        <a href="{% url '<name> from step 14' snack.id %}">Read More!</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </body>
+    </html>
+    ```
+
+**General Commands**
+
+1. **To run the server**
+```
+python manage.py runserver
+```
+
+2. **To kill the port**
+```
+kill -9 $(lsoft -t -l:"8000"
+```
+
+3. **To run the tests**
+```
+python manage.py test
+``` 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
