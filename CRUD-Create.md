@@ -40,18 +40,18 @@
             return reverse('thing_detail',args=[self.id])
     ```
 4. **Inside the templates directory >> create a template**    
-  ```
-  {% extends 'base.html' %}
-  {% block content%}
+      ```
+      {% extends 'base.html' %}
+      {% block content%}
 
-  <h1>Create a new  thing </h1>
-  <form   method='post'>
-      {% csrf_token %}
-      {{form.as_p}}
-      {% comment %} {{form.as_ul}} {% endcomment %}
+      <h1>Create a new  thing </h1>
+      <form   method='post'>
+          {% csrf_token %}
+          {{form.as_p}}
+          {% comment %} {{form.as_ul}} {% endcomment %}
 
-      <input type='submit' />
-  </form>    
+          <input type='submit' />
+      </form>    
 
-  {% endblock content%}
-  ``` 
+      {% endblock content%}
+      ``` 
