@@ -1,4 +1,4 @@
-# Creating Django Apps
+# Creating Web-Apps with Django
 
 1. **Create a project**
     ```
