@@ -196,7 +196,7 @@
     ```
 2. **To run the server on a specific port**
     ```
-    python manage.py runserver 8001
+    python manage.py runserver <int: port_number>
     ```
 3. **To kill the port**
     ```
