@@ -194,11 +194,15 @@
     ```
     python manage.py runserver
     ```
-2. **To kill the port**
+2. **To run the server on a specific port**
+    ```
+    python manage.py runserver 8001
+    ```
+3. **To kill the port**
     ```
     kill -9 $(lsoft -t -l:"8000"
     ```
-3. **To run the tests**
+4. **To run the tests**
     ```
     python manage.py test
     ``` 
