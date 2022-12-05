@@ -74,10 +74,6 @@
         template_name = '<HTML_file>.html'
         model = <model_class_name>
         context_object_name = '<name>' # to change from object_list to <name> in the templates.
-
-    class Meta:
-        verbose_name_plural = "<table_name>"
-        ordering = ['-pk'] # to change the ordering displayed
     ```
     OR
     ```
@@ -88,10 +84,6 @@
         template_name = '<HTML_file>.html'
         model = <model_class_name>
         context_object_name = '<name>' # to change from object_list to <name> in the templates.
-
-    class Meta:
-        verbose_name_plural = "<table_name>"
-        ordering = ['-pk'] # to change the ordering displayed
     ```
 14. **Create the urls for the Apps**
     
@@ -122,6 +114,13 @@
     
         def __str__(self):
             return self.name
+            
+        class Meta:
+            verbose_name_plural = "<table_name>"
+            ordering = ['-pk'] # to change the ordering displayed
+            
+        def get_absolute_url(self):
+            return reverse('snack_detail',args=[self.id])
     ```
 16. **Register the models in the admin (<app_name>/admin.py)**
     ```
