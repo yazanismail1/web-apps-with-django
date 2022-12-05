@@ -199,7 +199,7 @@
     ```
 3. **To kill the port**
     ```
-    kill -9 $(lsoft -t -l:"8000"
+    kill -9 $(lsof -t -i tcp:8000) 
     ```
 4. **To run the tests**
     ```
