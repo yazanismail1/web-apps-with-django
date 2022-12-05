@@ -45,7 +45,7 @@
 
 10. **Create Apps**
     ```
-    $ django-admin startapp <app_name>
+    $ python manage.py startapp <app_name>
     ```
 11. **Register the Apps in the project (<project_name>/urls.py)**
     ```
