@@ -205,3 +205,10 @@
     ```
     python manage.py test
     ``` 
+5. **To allow other to run the prpject**
+    Inside the settings.py 
+    ```
+    CSRF_TRUSTED_ORIGINS = [
+    "http://127.0.0.1:8000/",
+    ]
+    ```
