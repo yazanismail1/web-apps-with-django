@@ -51,6 +51,9 @@
     ```
     from django.urls import include
     path('<path>', include('<app_name>.urls'))
+    
+    if settings.DEBUG:
+        urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     ```
 12. **Add the Apps in the project (<projeact_name>/settings.py)**
 
