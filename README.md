@@ -50,6 +50,9 @@
 11. **Register the Apps in the project (<project_name>/urls.py)**
     ```
     from django.urls import include
+    from django.conf import settings
+    from django.conf.urls.static import static
+    
     path('<path>', include('<app_name>.urls'))
     
     if settings.DEBUG:
