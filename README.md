@@ -1,10 +1,10 @@
 # Table of Content
 
-## General Application
+### General Application
 
 - [General Apps Procedure](General_Applications/General-apps.md)
 
-## CRUD Application
+### CRUD Application
 
 - [Create Functionality](CRUD_Application/CRUD-Create.md)
 
@@ -12,10 +12,10 @@
 
 - [Delete Functionality](CRUD_Application/CRUD-Delete.md)
 
-## Testing
+### Testing
 
 - [Dynamic Testing](Testing/Dymanic-Testing.md)
 
-## References
+### References
 
 - [Acknowledgements and References](references-and-acknowledgements.md)
