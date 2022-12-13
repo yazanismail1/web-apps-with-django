@@ -20,6 +20,10 @@
 
 - [REST APIs Permissions Testing](RESTfull_API/testing.md)
 
+### Using PostgreSQL with Docker instead of SQLite
+
+- [Using PostgreSQL with Docker](PostgreSQL_Docker/PostgreSQL_docker.md)
+
 ### Testing
 
 - [Dynamic Testing](Testing/Dymanic-Testing.md)
