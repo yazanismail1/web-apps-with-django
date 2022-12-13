@@ -1,3 +1,3 @@
-**Credit goes to:** <https://github.com/RaniaAbdullahh>
+**Credit goes to:** 
 
-**Demo:** <https://github.com/LTUC/amman-python-401d10/tree/main/Class-22>
+[1] <https://github.com/RaniaAbdullahh>
