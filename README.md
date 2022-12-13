@@ -16,6 +16,10 @@
 
 - [REST APIs](RESTfull_API/rest_framework_django.md)
 
+- [REST APIs Permissions](RESTfull_API/rest_framework_django.md)
+
+- [REST APIs Permissions Testing](RESTfull_API/testing.md)
+
 ### Testing
 
 - [Dynamic Testing](Testing/Dymanic-Testing.md)
