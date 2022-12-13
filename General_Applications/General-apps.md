@@ -1,5 +1,3 @@
-# Creating Web-Apps with Django
-
 1. **Create a project**
     ```
     $ django-admin startproject <project_name> .

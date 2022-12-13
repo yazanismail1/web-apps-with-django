@@ -12,6 +12,10 @@
 
 - [Delete Functionality](CRUD_Application/CRUD-Delete.md)
 
+### REST API
+
+- [REST APIs](RESTfull_API/rest_framework_django.md)
+
 ### Testing
 
 - [Dynamic Testing](Testing/Dymanic-Testing.md)
