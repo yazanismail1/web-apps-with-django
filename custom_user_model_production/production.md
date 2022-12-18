@@ -3,7 +3,7 @@
 1. **Install Relevant Libraries**
 
     ```
-    pip install whitenoise gunicorn
+    pip install whitenoise gunicorn psycopg2-binary
     ```
 
 2. **Update the MIDDLEWARE in <project_name>/settings.py**
